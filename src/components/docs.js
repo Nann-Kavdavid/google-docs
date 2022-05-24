@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Modal from "./modal";
 import { addDoc, collection, onSnapshot } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
 export default function Docs({
     database
@@ -45,6 +46,11 @@ export default function Docs({
         getData();
     }, []);
 
+    let navigate = useNavigate();
+    const getID = (id) => {
+        navigate(`/editDocs/${id}`);
+    }
+
     return (
         <div className="docs-main">
             <h1>Docs Clone</h1>
@@ -59,7 +65,7 @@ export default function Docs({
             <div className="grid-main">
                 {docsData.map((doc) => {
                     return (
-                        <div className="grid-child" key={doc.id}>
+                        <div className="grid-child" key={doc.id} onClick={() => getID(doc.id)}>
                             <p>{doc.title}</p>
                         </div>
                     )
