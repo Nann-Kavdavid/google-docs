@@ -2,6 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import Modal from "./modal";
 import { addDoc, collection, onSnapshot } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import i18next from "i18next";
+import { Select, MenuItem } from "@mui/material";
 
 export default function Docs({
     database
@@ -51,17 +54,49 @@ export default function Docs({
         navigate(`/editDocs/${id}`);
     }
 
+    const languagues = [
+        {
+            code: 'ja',
+            name: '日本語',        
+          },
+          {
+            code: 'en',
+            name: 'English',
+          },
+    ];
+    const { t } = useTranslation();
+    const [lang, setLang] = useState("en");
+    const handleChange = (e) => {
+        setLang(e.target.value);
+       
+    }
+
+    useEffect(() => {
+        i18next.changeLanguage(lang);
+    }, [lang])
+
+
     return (
         <div className="docs-main">
-            <h1>Docs Clone</h1>
+            <h1>{t("app_title")}</h1>
 
             <button 
                 className="add-docs"
                 onClick={handleOpen}
             >
-                Add a Document
+                {t("doc_add_btn")}
             </button>
-
+            <Select
+                className="change-lang"
+                value={lang}
+                onChange={handleChange}
+            >
+                {languagues.map(item => {
+                    return (
+                        <MenuItem value={item.code}>{item.name}</MenuItem>
+                    )
+                })}
+            </Select>
             <div className="grid-main">
                 {docsData.map((doc) => {
                     return (

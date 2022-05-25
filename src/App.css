@@ -65,3 +65,13 @@
 .ql-container.ql-snow {
   border: none !important;
 }
+
+.change-lang {
+  margin-left: 10px;
+  height: 40px;
+  width: 200px;
+  background-color: #07ffea;
+  border: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}

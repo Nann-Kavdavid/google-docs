@@ -5,6 +5,7 @@ import 'react-quill/dist/quill.snow.css';
 import { collection, doc, updateDoc, onSnapshot } from "firebase/firestore";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { useTranslation } from "react-i18next";
 
 export default function EditDocs({
     database
@@ -18,6 +19,7 @@ export default function EditDocs({
     const getQuillData = (value) => {
         setDocsDesc(value);
     }
+    const { t } = useTranslation();
     useEffect(() => {
         const updateDocsData = setTimeout(() => {
             const document = doc(collectionRef, params.id);
