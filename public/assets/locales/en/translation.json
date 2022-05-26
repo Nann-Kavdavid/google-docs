@@ -1,4 +1,10 @@
 {
     "app_title": "Google Docs Clone",
-    "doc_add_btn": "Add a Document"
+    "doc_add_btn": "Add a Document",
+    "add_btn": "Add",
+    "doc_add_placeholder": "Add a Title",
+    "doc_saved_notification": "Document Saved",
+    "doc_cannot_save_notification": "Cannot Save Document"
+    
+
 }

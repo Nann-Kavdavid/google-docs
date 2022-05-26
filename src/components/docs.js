@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import Modal from "./modal";
+import Modal from "./Modal";
 import { addDoc, collection, onSnapshot } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";

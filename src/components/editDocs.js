@@ -27,12 +27,12 @@ export default function EditDocs({
                 docsDesc: docsDesc
             })
             .then(() => {
-                toast.success("Document Saved", {
+                toast.success(t("doc_saved_notification"), {
                     autoClose: 2000
                 });
             })
             .catch(() => {
-                toast.error("Cannot Save Document", {
+                toast.error(t("doc_saved_notification"), {
                     autoClose: 2000
                 });
             });

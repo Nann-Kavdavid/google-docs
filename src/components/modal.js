@@ -1,6 +1,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
+import { useTranslation } from "react-i18next";
 
 const style = {
     position: "absolute",
@@ -22,6 +23,7 @@ export default function ModalComponent({
     addData
 }) {
     const handleClose = () => setOpen(false);
+    const { t } = useTranslation();
 
     return (
         <div>
@@ -33,7 +35,7 @@ export default function ModalComponent({
             >
                 <Box sx={style}>
                     <input
-                        placeholder="Add the Title" 
+                        placeholder={t("doc_add_placeholder")} 
                         className="add-input"
                         onChange={(event) => setTitle(event.target.value)}
                         value={title}
@@ -43,7 +45,7 @@ export default function ModalComponent({
                             className="add-docs"
                             onClick={addData}
                         >   
-                            Add
+                            {t("add_btn")}
                         </button>
                     </div>
                 </Box>

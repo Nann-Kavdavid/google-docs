@@ -1,4 +1,9 @@
 {
     "app_title": "Google ドキュメント クローン",
-    "doc_add_btn": "ドキュメントを追加"
+    "doc_add_btn": "ドキュメントを追加",
+    "add_btn": "追加",
+    "doc_add_placeholder": "タイトルを追加",
+    "doc_saved_notification": "ドキュメントが保存されました",
+    "doc_cannot_save_notification": "ドキュメントを保存できません"
+    
 }
